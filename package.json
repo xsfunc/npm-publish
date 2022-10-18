@@ -36,8 +36,14 @@
     "lib/**/*"
   ],
   "devDependencies": {
+    "semantic-release": "^19.0.5",
     "shx": "^0.3.4",
     "typescript": "^4.8.4"
   },
-  "packageManager": "pnpm@7.13.5"
+  "packageManager": "pnpm@7.13.5",
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
 }
