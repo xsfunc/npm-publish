@@ -5,7 +5,7 @@ on:
     branches: main
 
 jobs:
-  build:
+  publish-npm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,21 +15,9 @@ jobs:
           node-version: 16
           cache: pnpm
       - run: pnpm i
-      - run: pnpm build
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: pnpm
 
       - name: Release
-        run: npx semantic-release
+        run: pnpx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
