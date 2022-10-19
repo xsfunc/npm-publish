@@ -1,6 +1,6 @@
 {
   "name": "npm-publish",
-  "version": "0.0.0-dev",
+  "version": "0.0.0-development",
   "description": "test package",
   "license": "MIT",
   "repository": {
@@ -15,7 +15,8 @@
     "build:cjs": "tsc -p ./tsconfig.cjs.json",
     "build:esm": "tsc -p ./tsconfig.esm.json",
     "postbuild:esm": "shx mv lib/esm/index.js lib/esm/index.mjs",
-    "prepack": "pnpm build"
+    "prepack": "pnpm build",
+    "semantic-release": "semantic-release"
   },
   "type": "module",
   "types": "./lib/cjs/types/index.d.ts",
@@ -45,5 +46,8 @@
     "branches": [
       "main"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
