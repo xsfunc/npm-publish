@@ -1,5 +1,5 @@
 {
-  "name": "npm-publish",
+  "name": "@xsfunc/npm-publish",
   "version": "0.0.0-development",
   "description": "test package",
   "license": "MIT",
